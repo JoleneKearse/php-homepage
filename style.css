@@ -1,0 +1,144 @@
+@layer reset, layout, base;
+
+@layer reset {
+    *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  /* https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/ */
+  html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+  }
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  figure,
+  blockquote,
+  dl,
+  dd {
+    margin: 0;
+  }
+  /* https://www.scottohara.me/blog/2019/01/12/lists-and-safari.html */
+  [role="list"] {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    min-block-size: 100vh;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background: var(--brand-900);
+  }
+  h1,
+  h2,
+  h3,
+  button,
+  input,
+  label {
+    line-height: 1.1;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+  }
+  p,
+  li {
+    text-wrap: pretty;
+  }
+  img,
+  picture {
+    max-inline-size: 100%;
+    display: block;
+  }
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+  a,
+  button {
+    cursor: pointer;
+  }
+
+  :root {
+    --brand-100: #F3F9F0;
+    --brand-200: #DCEED3;
+    --brand-300: #C5E2B6;
+    --brand-400: #A2D08A;
+    --brand-500: #6BAF46;
+    --brand-600: #47752F;
+    --brand-700: #2C491D;
+    --brand-800: #1A2C11;
+    --brand-900: #002916;
+    --brand-950: #000F08;
+    --blue-500: #007EA7;
+    --purple-500: #4B3F72;
+    --pink-500: #CC3363;
+    --gradient-title: 
+      linear-gradient(
+        45deg,
+        hsl(99deg 43% 48%) 0%,
+        hsl(133deg 43% 47%) 20%,
+        hsl(160deg 100% 33%) 34%,
+        hsl(168deg 100% 32%) 45%,
+        hsl(176deg 100% 31%) 54%,
+        hsl(183deg 100% 31%) 62%,
+        hsl(189deg 100% 33%) 70%,
+        hsl(192deg 100% 33%) 80%,
+        hsl(195deg 100% 33%) 100%
+      );
+    --gradient-clock: 
+      linear-gradient(
+        to right,
+        var(--brand-200),
+        var(--brand-400)
+      );
+    }
+}
+
+@layer layout {
+  .container {
+  max-inline-size: 1000px;
+  margin-inline: auto;
+  padding-inline: 1rem;
+  }
+  main {
+    margin-inline: 4rem;
+    outline: 1px #6BAF46 solid;
+  }
+  header {
+    padding-block: 4rem;
+  }
+}
+
+@layer base {
+  .title {
+    text-align: center;
+    font-size: 5rem;
+    background: var(--gradient-title);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+  }
+  .clock-text {
+    display: inline-block;
+    text-align: center;
+    font-size: 8rem;
+    background: var(--gradient-clock);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -webkit-text-stroke: 3px var(--brand-900);
+    text-decoration: line-through;
+  }
+}
+
+
